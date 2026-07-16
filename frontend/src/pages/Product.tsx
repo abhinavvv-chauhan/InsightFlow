@@ -58,7 +58,7 @@ const Product = () => {
                   paddingAngle={5}
                   dataKey="total_revenue"
                   nameKey="category"
-                  label={({ name, percent }) => `${name} ${(percent * 100).toFixed(0)}%`}
+                  label={({ name, percent }) => `${name} ${((percent || 0) * 100).toFixed(0)}%`}
                   labelLine={false}
                 >
                   {(data?.categories || []).map((_: any, index: number) => (
@@ -68,7 +68,7 @@ const Product = () => {
                 <Tooltip 
                   contentStyle={{ backgroundColor: '#1e1e2f', border: '1px solid rgba(255,255,255,0.1)', borderRadius: '8px' }}
                   itemStyle={{ color: '#fff' }}
-                  formatter={(value: number) => `₹${value}`}
+                  formatter={(value: any) => `₹${value}`}
                 />
               </PieChart>
             </ResponsiveContainer>
