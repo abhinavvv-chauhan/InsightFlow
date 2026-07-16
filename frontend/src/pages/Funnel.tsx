@@ -60,7 +60,7 @@ const Funnel = () => {
                   contentStyle={{ backgroundColor: '#1e1e2f', border: '1px solid rgba(255,255,255,0.1)', borderRadius: '8px' }}
                   itemStyle={{ color: '#fff' }}
                 />
-                <Area type="monotone" dataKey="Users" stroke="#6366f1" fillOpacity={1} fill="url(#colorUv)" />
+                <Area type="monotone" dataKey="Sessions" stroke="#6366f1" fillOpacity={1} fill="url(#colorUv)" />
               </AreaChart>
             </ResponsiveContainer>
           </div>

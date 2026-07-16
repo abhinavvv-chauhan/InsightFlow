@@ -80,7 +80,7 @@ def get_product_data():
     
     # Convert Decimals
     for r in cat:
-        r['total_revenue'] = float(r['total_revenue']) if r['total_revenue'] else 0
+        r['total_revenue'] = float(r['revenue']) if r.get('revenue') else 0
         
     return {
         "status": "success",

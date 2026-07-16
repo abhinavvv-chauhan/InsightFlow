@@ -55,7 +55,7 @@ const Customer = () => {
                   itemStyle={{ color: '#fff' }}
                   cursor={{ fill: '#ffffff10' }}
                 />
-                <Bar dataKey="total_users" fill="#a78bfa" radius={[0, 4, 4, 0]} />
+                <Bar dataKey="total_sessions" fill="#a78bfa" radius={[0, 4, 4, 0]} />
               </BarChart>
             </ResponsiveContainer>
           </div>
