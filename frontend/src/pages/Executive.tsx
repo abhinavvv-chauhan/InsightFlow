@@ -11,7 +11,7 @@ const Executive = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const res = await axios.get('http://localhost:8000/api/kpi');
+        const res = await axios.get(`${import.meta.env.VITE_API_URL || 'http://localhost:8000'}/api/kpi`);
         setData(res.data);
       } catch (error) {
         console.error("Error fetching KPI data", error);

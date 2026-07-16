@@ -11,7 +11,7 @@ const Customer = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const res = await axios.get('http://localhost:8000/api/customer');
+        const res = await axios.get(`${import.meta.env.VITE_API_URL || 'http://localhost:8000'}/api/customer`);
         setData(res.data);
       } catch (error) {
         console.error("Error", error);

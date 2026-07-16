@@ -11,7 +11,7 @@ const Funnel = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const res = await axios.get('http://localhost:8000/api/funnel');
+        const res = await axios.get(`${import.meta.env.VITE_API_URL || 'http://localhost:8000'}/api/funnel`);
         setData(res.data.data);
       } catch (error) {
         console.error("Error", error);
