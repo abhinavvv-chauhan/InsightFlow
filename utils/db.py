@@ -1,4 +1,5 @@
 import os
+import asyncio
 import psycopg2
 from psycopg2.extras import RealDictCursor
 from contextlib import contextmanager
@@ -74,3 +75,11 @@ def transaction():
             conn.rollback()
             logger.error(f"Transaction failed, rolled back: {e}")
             raise e
+
+async def async_execute_query(sql: str, params=None):
+    """
+    Async-safe wrapper around execute_query.
+    Runs the blocking psycopg2 call in a thread pool via asyncio.to_thread,
+    so the FastAPI event loop is never blocked by DB I/O.
+    """
+    return await asyncio.to_thread(execute_query, sql, params)
