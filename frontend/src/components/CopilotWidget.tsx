@@ -279,6 +279,7 @@ export function CopilotWidget() {
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 20, scale: 0.95 }}
             transition={{ type: 'spring', stiffness: 400, damping: 30 }}
+            onWheel={(e) => e.stopPropagation()}
             className={clsx(
               'fixed z-[999] flex flex-col overflow-hidden rounded-2xl border border-white/[0.08]',
               'bg-obsidian-900/95 shadow-[0_24px_80px_-16px_rgba(0,0,0,0.8),0_0_0_1px_rgba(255,255,255,0.04)_inset] backdrop-blur-xl',
@@ -321,7 +322,11 @@ export function CopilotWidget() {
             </div>
 
             {/* ── Messages ── */}
-            <div className="min-h-0 flex-1 overflow-y-auto px-4 py-4">
+            <div
+              className="min-h-0 flex-1 overflow-y-auto px-4 py-4"
+              style={{ overscrollBehavior: 'contain' }}
+              onWheel={(e) => e.stopPropagation()}
+            >
               {isEmpty ? (
                 <motion.div
                   initial={{ opacity: 0, y: 8 }}
