@@ -1,6 +1,6 @@
 import { useState, useRef, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { Bot, Send, User, Loader2, AlertCircle, Code2, TableProperties, Sparkles } from 'lucide-react'
+import { Bot, Send, User, Loader2, AlertCircle, Code2, Sparkles } from 'lucide-react'
 import clsx from 'clsx'
 
 const API_BASE = import.meta.env.VITE_API_URL ?? 'http://localhost:8000'
