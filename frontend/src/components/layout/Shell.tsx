@@ -7,6 +7,7 @@ import {
   Filter,
   Users,
   Trophy,
+  Bot,
   PanelLeftClose,
   PanelLeftOpen,
   Activity,
@@ -18,6 +19,7 @@ const NAV = [
   { to: '/funnel', label: 'Funnel Engine', icon: Filter },
   { to: '/cohorts', label: 'Customer Cohorts', icon: Users },
   { to: '/products', label: 'Product Leaderboard', icon: Trophy },
+  { to: '/copilot', label: 'AI Copilot', icon: Bot },
 ]
 
 export function Shell({ children }: { children: ReactNode }) {
